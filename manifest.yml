@@ -1,0 +1,8 @@
+---
+applications:
+- name: bookshop
+  description: Idea is to developer a MTA with auth, roles, approuter and deploy to CF
+  version: 1.0.0
+  memory: 512MB
+  disk_quota: 512MB
+  buildpack: nodejs_buildpack
