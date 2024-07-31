@@ -8,11 +8,13 @@
   "dependencies": {
     "@sap/cds": "^8",
     "express": "^4",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.1.7",
+    "@sap/xssec": "^4"
   },
   "devDependencies": {
     "@cap-js/cds-types": "^0.6",
     "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^8",
     "@sap/ux-specification": "^1.120.15"
   },
   "scripts": {
@@ -21,14 +23,37 @@
     "watch-books": "cds watch --open books/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
-    "server":{
+    "server": {
       "index": true
     },
     "features": {
       "in_memory_db": true
     },
     "requires": {
-      "auth": "mocked",
+      "auth": {
+        "kind": "mocked",
+        "[development]": {
+          "users": {
+            "incident.support@tester.sap.com": {
+              "password": "initial",
+              "roles": [
+                "support"
+              ]
+            },
+            "alice": {
+              "roles": [
+                "support",
+                "admin"
+              ]
+            },
+            "bob": {
+              "roles": [
+                "support"
+              ]
+            }
+          }
+        }
+      },
       "db": {
         "kind": "sqlite",
         "credentials": {

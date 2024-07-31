@@ -9,6 +9,9 @@ This repo uses cds 8, sqliteDB, Fiori UI and app is running at https://bookshop.
     5. Used `Fiori Application Generator` Extension on VS Code to create UI
     6. Push to CF: `cf push bookshop`
     7. Uses dev space "cf-space-shrini" in the "my Free Tier" for CF deployment.
+    8. Added mta.yaml using `cds add mta`
+    9. Added app router using `cds add approuter`
+    10. Add content into `xs-security.json` with support role
 
 Further enhancements expected like adding mta.yaml, app route, auth, role, scopes etc. 
 Keep watching!
